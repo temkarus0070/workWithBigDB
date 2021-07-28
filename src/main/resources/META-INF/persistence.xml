@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="BigDBService" transaction-type="JTA">
+        <jta-data-source>jdbc/testDb</jta-data-source>
+        <class>com.example.workWithBigDB.database.Entities.Addons.PointConverter</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+
+        <properties>
+
+            <property name="eclipselink.target-database" value="PostgreSQL"/>
+
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+
+<property name="hibernate.dialect" value="org.hibernate.spatial.dialect.postgis.PostgisDialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
